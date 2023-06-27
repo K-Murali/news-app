@@ -3,6 +3,7 @@
     
 }
 .card1{
+    border: none;
    transition:transform .5s; 
 }
 
