@@ -137,22 +137,27 @@ export default function Navbar_1(props) {
                   Vision
                 </Link>
               </li>
+            
 
               {/* bookmark here */}
+              <li className="nav-item">
 
-              <div className="dropdown ">
+              <div className="dropdown " data-bs-theme={`${props.mode === "light" ? "light" : "dark"}`}>
                 <a
-                  className={`btn dropdown btn-${props.mode === "light" ? "dark" : "light"}`}
+                  className={`btn dropdown `}
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  style={{color:`${props.mode === "light" ? "white" : "black"}`}}
                 >
                    Bookmarks &nbsp;<i class="fa-regular fa-bookmark"></i></a>
 
                 <ul  id="book"className="dropdown-menu">
                 </ul>
               </div>
+                 
+              </li>
               
             </ul>
 

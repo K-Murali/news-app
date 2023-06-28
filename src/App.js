@@ -15,7 +15,7 @@ export default function App(props) {
   const bookmark = (title, link, flag) => {
     let a = document.getElementById("book");
     if (flag) {
-      a.innerHTML += `<li><a class="dropdown-item" href=${link}>${title}</a></li>`;
+      a.innerHTML += `<li><a class="dropdown-item" target="_blank" href=${link}>${title}</a></li>`;
     } else {
       a.lastChild.remove();
     }

@@ -1,14 +1,14 @@
 
 
 import React, { Component } from 'react'
-export class aboutme extends Component {
-  render() {
-    document.title = this.props.title
+ const aboutme=(props)=> {
+ 
+    document.title = props.title
     return (
-      <div>
-         <div className="container-sm text-center  my-5 ">
-      <h2 className={`text-${!this.props.mode} text-center bg-${!this.props.mode}`}>
-                   {this.props.title}
+      <div className='container mb-5'>
+         <div className="container-sm text-center   " style={{marginTop:'5rem'}}>
+      <h2 className={`text-${!props.mode} mb-4 text-center bg-${!props.mode}`}>
+                   {props.title}
                 </h2>
       <div className="p-3 my-4 mb-2 bg-info-subtle text-emphasis-info">
         <div className="container-sm   text-center">
@@ -39,7 +39,7 @@ export class aboutme extends Component {
     </div>
       </div>
     )
-  }
+  
 }
 
 export default aboutme
