@@ -1,81 +1,110 @@
 import "./App.css";
 import "./Style.css";
-
-import LoadingBar from 'react-top-loading-bar'
-import React, { Component } from "react";
-import Contentbar  from "./components/Contentbar";
-import { ReactPropTypes } from "react";
+import LoadingBar from 'react-top-loading-bar';
+import React, { useState } from "react";
+import Contentbar from "./components/Contentbar";
+import PropTypes from "prop-types";
 import Navbar from "./components/Navbar_1";
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutme from "./components/aboutme";
-export default class App extends Component {
- state={
-  progress:0,
-  mode:"light",
- 
- }
- setProgress=(x)=>{
- this.setState({progress:x})
- }
-  theme = () => {
 
+export default function App(props) {
+  const [progress, setProgress] = useState(0);
+  const [mode, setMode] = useState('light');
+
+  const bookmark = (title, link, flag) => {
+    let a = document.getElementById("book");
+    if (flag) {
+      a.innerHTML += `<li><a class="dropdown-item" href=${link}>${title}</a></li>`;
+    } else {
+      a.lastChild.remove();
+    }
+  };
+
+  const updateProgress = (x) => {
+    setProgress(x);
+  };
+
+  const theme = () => {
     let e = document.body;
-    console.log("clicked")
-    if(this.state.mode==="light"){
+    if (mode === "light") {
       e.setAttribute("data-bs-theme", "dark");
+      setMode("dark");
+    } else {
+      e.setAttribute("data-bs-theme", "light");
+      setMode("light");
+    }
+  };
 
-      console.log("clicked dark")
-
-    this.setState({mode:"dark"})
-  }
-  else{
-    e.setAttribute("data-bs-theme", "light");
-      this.setState({mode:"light"})
-  }
-};
-
-  render() {
-
-
-    return (
-      <Router>
-        <>
-        
-        <Navbar active={document.title}  mode={this.state.mode}  theme={this.theme} />
+  return (
+    <Router>
+      <>
+        <Navbar active={document.title} mode={mode} theme={theme} />
 
         <LoadingBar
-        color='#f11946'
-        progress={this.state.progress}
-        onLoaderFinished={() => this.setProgress(0)}
-      />
-          <div className="container">
+          color='#f11946'
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+        />
+
+        <div className="container">
           <div className="container mx-2">
-            
-          <Routes>
-            <Route exact path="/about" element={  <Aboutme title="About" mode={this.state.mode}  key="about me" topic="about me"  setprogress={this.setProgress} />}/>
-            <Route exact path="/home" element={   <Contentbar    setprogress={this.setProgress}   mode={this.state.mode} key="Home" title="Home" topic="general"  />} />
-            <Route exact path="/" element={  <Contentbar  setprogress={this.setProgress}  mode={this.state.mode} key="Navbar"   title="Home"topic="general"  />} />
-            <Route exact path="/business" element={  <Contentbar  mode={this.state.mode} setprogress={this.setProgress} title="Business" key="business" topic="business"   />} />
-            <Route exact path="/entertainment" element={  <Contentbar   mode={this.state.mode}setprogress={this.setProgress}title="Entertainment "  key="entertainment " topic="entertainment"  />} />
-            <Route exact path="/health" element={  <Contentbar  mode={this.state.mode} setprogress={this.setProgress}title="Health"  key="health" topic="health"  />} />
-            <Route exact path="/science" element={  <Contentbar  mode={this.state.mode} setprogress={this.setProgress}title="Science"  key="science" topic="science"  />} />
-            <Route exact path="/general" element={  <Contentbar  mode={this.state.mode} setprogress={this.setProgress}title="General"  key="general" topic="general"  />} />
-            <Route exact path="/sports" element={  <Contentbar  mode={this.state.mode} setprogress={this.setProgress} title="Sports" key="sports" topic="sports"  />} />
-            <Route exact path="/technology" element={  <Contentbar   mode={this.state.mode}setprogress={this.setProgress} title="Technology" key="technology" topic="technology"  />} />
-        
-        
-          
-
-            
-
-          </Routes>
-
-          
+            <Routes>
+              <Route
+                exact
+                path="/about"
+                element={<Aboutme title="About" mode={mode} key="about me" topic="about me" setprogress={updateProgress} />}
+              />
+              <Route
+                exact
+                path="/home"
+                element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Home" title="Home" topic="general" />}
+              />
+              <Route
+                exact
+                path="/"
+                element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Navbar" title="Home" topic="general" />}
+              />
+              <Route
+                exact
+                path="/business"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="Business" key="business" topic="business" />}
+              />
+              <Route
+                exact
+                path="/entertainment"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="Entertainment" key="entertainment" topic="entertainment" />}
+              />
+              <Route
+                exact
+                path="/health"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="Health" key="health" topic="health" />}
+              />
+              <Route
+                exact
+                path="/science"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="Science" key="science" topic="science" />}
+              />
+              <Route
+                exact
+                path="/general"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="General" key="general" topic="general" />}
+              />
+              <Route
+                exact
+                path="/sports"
+                element={<Contentbar bk={bookmark} mode={mode} setprogress={updateProgress} title="Sports" key="sports" topic="sports" />}
+              />
+              <Route
+                exact
+                path="/technology"
+                element={<Contentbar bk={bookmark}  mode={mode} setprogress={updateProgress} title="Technology" key="technology" topic="technology" />}
+              />
+            </Routes>
+          </div>
         </div>
-        </div>
-        
       </>
-      </Router>
-    );
-  }
+    </Router>
+  );
 }
+
