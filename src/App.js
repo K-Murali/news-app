@@ -62,7 +62,7 @@ export default function App(props) {
               />
               <Route
                 exact
-                path="/"
+                path="/news-app"
                 element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Navbar" title="Home" topic="general" />}
               />
               <Route

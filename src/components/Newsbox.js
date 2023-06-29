@@ -44,7 +44,7 @@ const [flag, setflag] = useState(true);
                 {/*  body after card  {title ,description , author last updated, read more button}*/}
 
                     <div className="card-body">
-                      <h6 className="card-title">{props.title}...</h6>
+                    <p class={`text-${props.mode === "light" ? "dark" : "info" } rounded bg-`}><h6 className="card-title">{props.title}...</h6></p> 
                       <p className="card-text">{props.description}...</p>
                       <p className="card-text"><small className="text-body-secondary"> by {(props.author)?props.author:"unknown"}.on {props.date}-{props.day}-{props.year}.</small></p>
                     </div>

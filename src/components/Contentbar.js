@@ -8,9 +8,9 @@ import Newsbox from "./Newsbox";
 const Contentbar = (props) => {
   const [count, setcount] = useState(null);
   const [page, setpage] = useState(1);
-  const [country, setcountry] = useState("in");
+  const [title, setcountry] = useState("in");
   const [array, setarray] = useState([]);
-  const [topic, settopic] = useState("general");
+  const [topic, settopic] = useState(props.title);
   const [loading, setloading] = useState(true);
 
   const err = (ele) => {
@@ -19,31 +19,44 @@ const Contentbar = (props) => {
     }
   };
   
+ const  handelsearch = async () => {
+  //  settopic(city);
   
+  let p = new Promise((resolve, reject) => {
+    let city = document.getElementById("topic").value;
+ 
+    resolve(city);
+    });
+    p.then(async (city) => {
+      
+      newsupdate(city,true)
+    });
+  };
   
   
   const k=process.env.REACT_API_KEY;
-  let ke="f638820e5f9f4b1faf7b76caf561d483"
+  let ke="9e5c4d00ff5e4bc994bc5d3f23256c84"
  
  
-  const newsupdate = async (topic = props.topic) => {
-    document.title = props.title;
+  const newsupdate = async (topic = props.topic,flag=false) => {
     props.setprogress(20);
-    console.log(k)
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${ke}&page=${page}`;
-
+    let url=null;
+    if(flag){url=`https://newsapi.org/v2/everything?q=${topic}&from=2023-06-28&to=2023-06-2&sortBy=publishedAt&apiKey=f638820e5f9f4b1faf7b76caf561d483`}
+     else{url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${ke}&page=${page}`;}
+     
     props.setprogress(62);
     let p = await fetch(url);
     props.setprogress(82);
 
     let data = await p.json();
-
     setarray(data.articles);
     settopic(topic);
+    document.title=topic;
     setcount(data.totalResults);
     setloading(false);
     props.setprogress(100);
   };
+
   
 
   useEffect(() => {
@@ -83,12 +96,30 @@ const Contentbar = (props) => {
       >
         
             <h2
-              className={` my-5 text-${!props.mode} text-center bg-${!props.mode}`}
-            >
-              {props.title === "Home"
+              className={` my-5 text-${(props.mode)==="light"?"dark":"light"} text-center bg-${!props.mode}`}>
+              {(topic ==="general" &&props.title==="Home")
                 ? "Top Headlines"
                 : `Top Headlines - on ${document.title}`}
             </h2>
+              <form className={`d-flex my-5 `} role="search">
+                  <input
+                    id="topic"
+                    className={`form-control  bg-${(props.mode)==="light"?"secondary-subtle":"light-subtle"} me-2 ms-2`}
+                    type="search"
+                    placeholder="Search here...."
+                    aria-label="Search"
+                  />
+                  <button
+                    type="button"
+                    onClick={handelsearch}
+                    className={`btn  btn-md me-2 btn-${
+                      props.mode === "light" ? "dark" : "outline-light"
+                    }`}
+                  >
+                    search
+                  </button>
+                
+                </form>
      
 
         <div className="row justify-content-md-center ">
