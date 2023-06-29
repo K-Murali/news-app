@@ -9,6 +9,7 @@ const [flag, setflag] = useState(true);
   const bookmark=()=>{
     if(flag){
       props.bks(props.title,props.readmore,flag)
+
       setflag(false)
     }
     else{
@@ -21,7 +22,7 @@ const [flag, setflag] = useState(true);
    <> 
      
    
-        <div className=  {`container  shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
+        <div className=  {`container border border-2   shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
       
          {/* css u have to adjust here if u want to look good in all mobiles  */}
 
@@ -31,6 +32,12 @@ const [flag, setflag] = useState(true);
 
             <span style={{ height: "23.5px", width: "fit-content" }} className={` btn position-relative top-10px start-50 translate-middle badge rounded-pill  bg-${props.mode === "light" ? "danger" : "danger-subtle" } btn-${props.mode === "light" ? "danger" : "outline-danger" }`}>
               {props.source}
+              <span className="visually-hidden">unread messages</span>
+            </span>
+            <span style={{ height: "fit-content", width: "fit-content" }} className={` btn rounded-6 position-absolute top-0px start-100 mx-1 translate-middle badge rounded-pill  btn-${props.mode === "light" ? "light" : "dark" }`}>
+            <la type="" onClick={bookmark} className={`bookmark float-center  btn-sm  btn-`}><i  style={{color:`${props.mode === "light" ? '#000000': "#d3d3d3"  }`}} className={`${(flag)?'fa-sharp fs-4 fa-regular fa-fade':'fa-solid '} fs-4 fa-bookmark  `} ></i>
+                    {/* {(flag)?'save':'saved'} */}
+                </la>
               <span className="visually-hidden">unread messages</span>
             </span>
 
@@ -49,18 +56,17 @@ const [flag, setflag] = useState(true);
                       <p className="card-text"><small className="text-body-secondary"> by {(props.author)?props.author:"unknown"}.on {props.date}-{props.day}-{props.year}.</small></p>
                     </div>
                     
-                    <div className="container d-flex justify-content-between">
-
+       
                     <a
                       href={props.readmore}
                       target="_blank"
-                      className={`btn  btn1 float-start btn-sm me-2 btn-${props.mode === "light" ? "dark" : "outline-info" }`}> Read more &#8594;
+                     style={{backgroundColor:`${props.mode === "light" ? '#354f60':''}`}}
+                     className={`btn btn1 fs-6 rounded float-center btn-sm me-2 btn-${props.mode === "light" ? "dark" : "outline-info" }`}> &nbsp; Read more &#8594;
                     </a>
      
-
-                    <button type="button" onClick={bookmark} className={`btn btn1 btn-sm  btn-${props.mode === "light" ? "dark" : "outline-info" }`}>{(flag)?'save':'saved'}&nbsp; <i class={`${(flag)?'fa-sharp fa-regular':'fa-solid'} fa-bookmark`} ></i>
-                </button>
-                      </div>
+                                                                                                                                              
+                
+                     
             </div>
           </div>
         </div>

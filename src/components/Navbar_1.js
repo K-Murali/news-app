@@ -117,7 +117,7 @@ export default function Navbar_1(props) {
                   About Us
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className={`nav-link ${
                     props.active === "Contact Us" ? "text-success" : "active"
@@ -126,8 +126,8 @@ export default function Navbar_1(props) {
                 >
                   Contact Us
                 </Link>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <Link
                   className={`nav-link ${
                     props.active === "Vision" ? "text-success" : "active"
@@ -136,7 +136,7 @@ export default function Navbar_1(props) {
                 >
                   Vision
                 </Link>
-              </li>
+              </li> */}
             
 
               {/* bookmark here */}
@@ -151,9 +151,10 @@ export default function Navbar_1(props) {
                   aria-expanded="false"
                   style={{color:`${props.mode === "light" ? "white" : "black"}`}}
                 >
-                   Bookmarks &nbsp;<i class="fa-regular fa-bookmark"></i></a>
-
+                   Bookmarks &nbsp;<i className="fa-regular fa-bookmark"></i></a>
                 <ul  id="book"className="dropdown-menu">
+                <li id="nothing"><a className="dropdown-item">Saved Items list</a></li>
+                <li><hr className="dropdown-divider"/></li>
                 </ul>
               </div>
                  

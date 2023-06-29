@@ -2,6 +2,9 @@
     transform: scale(1.046);
     
 }
+.bookmark{
+    transition:transform .5s; 
+}
 .card1{
     border: none;
    transition:transform .5s; 

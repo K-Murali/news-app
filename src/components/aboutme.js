@@ -7,27 +7,27 @@ import React, { Component } from 'react'
     return (
       <div className='container  mb-5'>
          <div className="container-sm text-center   " style={{marginTop:'5rem'}}>
-      <h2  className={`text-${!props.mode} fs-1 mb-4 text-center bg-${!props.mode}`}>
+      <h2  className={`text-${props.mode} fs-1 mb-4 text-center bg-${!props.mode}`}>
                    {props.title}
                 </h2>
       <div className="p-3 my-4 mb-2 rounded-4 bg-info-subtle text-emphasis-info">
         <div className="container-sm   text-center">
-          <p className="fs-3">
-            My Name is <b> Muralidhar</b> , Thank you for giving me this
+          <p className="fs-4">
+            My Name is <l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;Muralidhar&nbsp; </l> , Thank you for giving me this
             opportunity to introduce my self. I am from Andhra Pradesh I have
             done all my higher schooling in Kakinada currently, I am doing my
-            Bachelors at NIT Durgapur in Electronics and communication
-            engineering and my hobbies include fitness chess, and cricket.
+            Bachelors at<l className='text-info rounded-3 bg-dark'>&nbsp;NIT Durgapur&nbsp; </l>in&nbsp;<l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;  Electronics and Communication
+            Engineering&nbsp;&nbsp; </l> &nbsp;and my hobbies include Fitness,Chess, and Cricket.
           </p>
-          <p className="fs-3">
-            I am tech enthusiastic and have a deep interest in development. I am
-            skilled in web technologies like{" "}
-            <b>HTML CSS ,Bootstrap, JavaScript and React.js</b> and I also a
-            have good knowledge in <b>C++ Ds-algo</b>. I have made 2 projects on
+          <p className="fs-4">
+            I am Tech enthusiastic and have a deep interest in Development. I am
+            skilled in web technologies like
+            <br/>&nbsp;<l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;HTML CSS ,Bootstrap, JavaScript and React.js&nbsp;&nbsp;</l>&nbsp; and I also a
+            have good knowledge in <l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;C++ Ds-algo&nbsp;&nbsp;</l>&nbsp;. I have made 2 projects on
             APIs using react.js. currently I am a committee member of NSS Nit
             Durgapur.
           </p>
-          <p className="fs-3">
+          <p className="fs-4">
             It will be a great platform to showcase my skills. I believe that I
             have a good skill set and experience which are necessary for this
             role. As I am fresher, I know the value of job, if you hired me, I

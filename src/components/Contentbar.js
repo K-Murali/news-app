@@ -35,14 +35,18 @@ const Contentbar = (props) => {
   
   
   const k=process.env.REACT_API_KEY;
-  let ke="9e5c4d00ff5e4bc994bc5d3f23256c84"
+  let apikey="9e5c4d00ff5e4bc994bc5d3f23256c84"
+  // 09bb51dd7f3d4a848db443c4982d14fa
+  
+
+
  
  
   const newsupdate = async (topic = props.topic,flag=false) => {
     props.setprogress(20);
     let url=null;
-    if(flag){url=`https://newsapi.org/v2/everything?q=${topic}&from=2023-06-28&to=2023-06-2&sortBy=publishedAt&apiKey=f638820e5f9f4b1faf7b76caf561d483`}
-     else{url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${ke}&page=${page}`;}
+    if(flag){url=`https://newsapi.org/v2/everything?q=${topic}&from=2023-06-28&to=2023-06-2&sortBy=publishedAt&apiKey=${apikey}`}
+     else{url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${apikey}&page=${page}`;}
      
     props.setprogress(62);
     let p = await fetch(url);
@@ -73,7 +77,7 @@ const Contentbar = (props) => {
   
     pr.then(async () => {
 
-      let url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${ke}&page=${page}&pagesize=20`;
+      let url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${apikey}&page=${page}&pagesize=20`;
 
       let p = await fetch(url);
       let data = await p.json();
@@ -127,7 +131,7 @@ const Contentbar = (props) => {
           {array.map((Element, i = 0) => {
             return (
               err(Element) && (
-                <div className=" flex-wrap col-md-4" key={i++}>
+                <div className=" flex-wrap col-md-4 " key={i++}>
                   <Newsbox
                     author={Element.author}
                     date={new Date(Element.publishedAt).getDate()}
