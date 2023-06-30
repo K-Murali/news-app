@@ -14,9 +14,10 @@ const Contentbar = (props) => {
   const [loading, setloading] = useState(true);
 
   const err = (ele) => {
-    if (ele.urlToImage && ele.title && ele.description) {
+    if (ele.urlToImage&& ele.title && ele.description) {
       return ele;
     }
+   return null;
   };
   
  const  handelsearch = async () => {
@@ -130,7 +131,7 @@ const Contentbar = (props) => {
           {/* mapping elements  */}
           {array.map((Element, i = 0) => {
             return (
-              err(Element) && (
+              err(Element)&& Element.urlToImage && (
                 <div className=" flex-wrap col-md-4 " key={i++}>
                   <Newsbox
                     author={Element.author}

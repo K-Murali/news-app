@@ -7,7 +7,7 @@ import React, { Component } from 'react'
     return (
       <div className='container  mb-5'>
          <div className="container-sm text-center   " style={{marginTop:'5rem'}}>
-      <h2  className={`text-${props.mode} fs-1 mb-4 text-center bg-${!props.mode}`}>
+      <h2  className={`text-${!props.mode} fs-1 mb-4 text-center bg-${!props.mode}`}>
                    {props.title}
                 </h2>
       <div className="p-3 my-4 mb-2 rounded-4 bg-info-subtle text-emphasis-info">
@@ -24,7 +24,7 @@ import React, { Component } from 'react'
             skilled in web technologies like
             <br/>&nbsp;<l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;HTML CSS ,Bootstrap, JavaScript and React.js&nbsp;&nbsp;</l>&nbsp; and I also a
             have good knowledge in <l className='text-info rounded-3 bg-dark'>&nbsp;&nbsp;C++ Ds-algo&nbsp;&nbsp;</l>&nbsp;. I have made 2 projects on
-            APIs using react.js. currently I am a committee member of NSS Nit
+            APIs using react.js. currently I am a committee member of NSS NIT
             Durgapur.
           </p>
           <p className="fs-4">
