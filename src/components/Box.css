@@ -8,6 +8,8 @@
 .card1{
     border: none;
    transition:transform .5s; 
+   height: 100%;
+    width: 20.5rem; 
 }
 
 .btn1:hover{
@@ -22,5 +24,12 @@
 }
 .tag{
     transition:transform .5s; 
+ }
+ @media screen and (max-width: 600px) {
+    .card1{
+
+        width: 18rem;
+        height: 100%;
+    }
  }
  

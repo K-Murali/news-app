@@ -47,8 +47,8 @@ export default function App(props) {
           onLoaderFinished={() => setProgress(0)}
         />
 
-        <div className="container">
-          <div className="container mx-2">
+      
+          <div className="container-fluid d-flex justify-content-center align-items-center ">
             <Routes>
               <Route
                 exact
@@ -102,7 +102,7 @@ export default function App(props) {
               />
             </Routes>
           </div>
-        </div>
+
       </>
     </Router>
   );

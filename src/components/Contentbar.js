@@ -127,13 +127,12 @@ const Contentbar = (props) => {
                 </form>
      
 
-        <div className="row justify-content-md-center ">
+        <div className="container d-flex flex-wrap justify-content-center align-items-center">
           {/* mapping elements  */}
           {array.map((Element, i = 0) => {
             return (
               err(Element)&& Element.urlToImage && (
-                <div className=" flex-wrap col-md-4 " key={i++}>
-                  <Newsbox
+                  <Newsbox key={i++}
                     author={Element.author}
                     date={new Date(Element.publishedAt).getDate()}
                     day={new Date(Element.publishedAt).getDay()}
@@ -159,7 +158,7 @@ const Contentbar = (props) => {
                     loader={loading}
                     readmore={Element.url}
                   />
-                </div>
+                
               )
             );
           })}

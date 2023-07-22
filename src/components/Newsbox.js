@@ -22,11 +22,11 @@ const [flag, setflag] = useState(true);
    <> 
      
    
-        <div className=  {`container border border-2   shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
+        <div className=  {`container border border-2  shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
       
          {/* css u have to adjust here if u want to look good in all mobiles  */}
 
-          <div className={`card card1`}style={{ height: "100%", width: "20.5rem" }}>
+          <div className={`card card1`}>
 
             {/* red badge of source */}
 
