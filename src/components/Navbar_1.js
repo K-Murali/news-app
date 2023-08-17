@@ -9,7 +9,7 @@ export default function Navbar_1(props) {
         data-bs-theme={`${props.mode === "light" ? "dark" : "light"}`}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/home ">
+          <Link className="navbar-brand" to="/">
             News API
           </Link>
           <button
@@ -31,7 +31,7 @@ export default function Navbar_1(props) {
                     props.active === "Home" ? "text-success" : "active"
                   }`}
                   aria-current="page"
-                  to="/home"
+                  to="/"
                 >
                   Home
                 </Link>
@@ -117,29 +117,7 @@ export default function Navbar_1(props) {
                   About Us
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    props.active === "Contact Us" ? "text-success" : "active"
-                  }`}
-                  to="/contact "
-                >
-                  Contact Us
-                </Link>
-              </li> */}
-              {/* <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    props.active === "Vision" ? "text-success" : "active"
-                  }`}
-                  to="/vision"
-                >
-                  Vision
-                </Link>
-              </li> */}
-            
-
-              {/* bookmark here */}
+              
               <li className="nav-item">
 
               <div className="dropdown " data-bs-theme={`${props.mode === "light" ? "light" : "dark"}`}>

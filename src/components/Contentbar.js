@@ -8,7 +8,6 @@ import Newsbox from "./Newsbox";
 const Contentbar = (props) => {
   const [count, setcount] = useState(null);
   const [page, setpage] = useState(1);
-  const [title, setcountry] = useState("in");
   const [array, setarray] = useState([]);
   const [topic, settopic] = useState(props.title);
   const [loading, setloading] = useState(true);
@@ -21,21 +20,14 @@ const Contentbar = (props) => {
   };
   
  const  handelsearch = async () => {
-  //  settopic(city);
-  
-  let p = new Promise((resolve, reject) => {
     let city = document.getElementById("topic").value;
- 
-    resolve(city);
-    });
-    p.then(async (city) => {
-      
-      newsupdate(city,true)
-    });
+   if(city.length>0){
+     newsupdate(city,true)
+    }
   };
   
   
-  const k=process.env.REACT_API_KEY;
+  const k=process.env.REACT_APP_API_KEY;
   let apikey="9e5c4d00ff5e4bc994bc5d3f23256c84"
   // 09bb51dd7f3d4a848db443c4982d14fa
   
@@ -46,7 +38,7 @@ const Contentbar = (props) => {
   const newsupdate = async (topic = props.topic,flag=false) => {
     props.setprogress(20);
     let url=null;
-    if(flag){url=`https://newsapi.org/v2/everything?q=${topic}&from=2023-06-28&to=2023-06-2&sortBy=publishedAt&apiKey=${apikey}`}
+    if(flag){url=`https://newsapi.org/v2/everything?q=${topic}&sortBy=publishedAt&apiKey=${apikey}`}
      else{url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${apikey}&page=${page}`;}
      
     props.setprogress(62);
@@ -110,7 +102,7 @@ const Contentbar = (props) => {
                   <input
                     id="topic"
                     className={`form-control  bg-${(props.mode)==="light"?"secondary-subtle":"light-subtle"} me-2 ms-2`}
-                    type="search"
+                    type="text"
                     placeholder="Search here...."
                     aria-label="Search"
                   />

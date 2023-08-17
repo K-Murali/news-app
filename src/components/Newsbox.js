@@ -63,10 +63,6 @@ const [flag, setflag] = useState(true);
                      style={{backgroundColor:`${props.mode === "light" ? '#354f60':''}`}}
                      className={`btn btn1 fs-6 rounded float-center btn-sm me-2 btn-${props.mode === "light" ? "dark" : "outline-info" }`}> &nbsp; Read more &#8594;
                     </a>
-     
-                                                                                                                                              
-                
-                     
             </div>
           </div>
         </div>

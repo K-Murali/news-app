@@ -57,7 +57,7 @@ export default function App(props) {
               />
               <Route
                 exact
-                path="/home"
+                path="/"
                 element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Home" title="Home" topic="general" />}
               />
               <Route
