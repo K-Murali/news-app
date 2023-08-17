@@ -35,9 +35,9 @@ const [flag, setflag] = useState(true);
               <span className="visually-hidden">unread messages</span>
             </span>
             <span style={{ height: "fit-content", width: "fit-content" }} className={` btn rounded-6 position-absolute top-0px start-100 mx-1 translate-middle badge rounded-pill  btn-${props.mode === "light" ? "light" : "dark" }`}>
-            <la type="" onClick={bookmark} className={`bookmark float-center  btn-sm  btn-`}><i  style={{color:`${props.mode === "light" ? '#000000': "#d3d3d3"  }`}} className={`${(flag)?'fa-sharp fs-4 fa-regular fa-fade':'fa-solid '} fs-4 fa-bookmark  `} ></i>
+            <span type="" onClick={bookmark} className={`bookmark float-center  btn-sm  btn-`}><i  style={{color:`${props.mode === "light" ? '#000000': "#d3d3d3"  }`}} className={`${(flag)?'fa-sharp fs-4 fa-regular fa-fade':'fa-solid '} fs-4 fa-bookmark  `} ></i>
                     {/* {(flag)?'save':'saved'} */}
-                </la>
+                </span>
               <span className="visually-hidden">unread messages</span>
             </span>
 
@@ -51,7 +51,7 @@ const [flag, setflag] = useState(true);
                 {/*  body after card  {title ,description , author last updated, read more button}*/}
 
                     <div className="card-body">
-                    <p class={`text-${props.mode === "light" ? "dark" : "info" } rounded bg-`}><h6 className="card-title">{props.title}...</h6></p> 
+                    <p className={`text-${props.mode === "light" ? "dark" : "info" } rounded bg-`}><span className="card-title">{props.title}...</span></p> 
                       <p className="card-text">{props.description}...</p>
                       <p className="card-text"><small className="text-body-secondary"> by {(props.author)?props.author:"unknown"}.on {props.date}-{props.day}-{props.year}.</small></p>
                     </div>

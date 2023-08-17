@@ -47,6 +47,7 @@ const Contentbar = (props) => {
 
     let data = await p.json();
     setarray(data.articles);
+    console.log(data.articles)
     settopic(topic);
     document.title=topic;
     setcount(data.totalResults);
@@ -74,6 +75,7 @@ const Contentbar = (props) => {
 
       let p = await fetch(url);
       let data = await p.json();
+      console.log(data.articles)
       setarray(array.concat(data.articles));
     });
   };
