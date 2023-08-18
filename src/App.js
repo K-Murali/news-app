@@ -3,7 +3,6 @@ import "./Style.css";
 import LoadingBar from 'react-top-loading-bar';
 import React, { useState } from "react";
 import Contentbar from "./components/Contentbar";
-import PropTypes from "prop-types";
 import Navbar from "./components/Navbar_1";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutme from "./components/aboutme";
@@ -11,6 +10,7 @@ import Aboutme from "./components/aboutme";
 export default function App(props) {
   const [progress, setProgress] = useState(0);
   const [mode, setMode] = useState('light');
+  
 
   const bookmark = (title, link, flag) => {
     let a = document.getElementById("book");
