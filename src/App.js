@@ -40,14 +40,11 @@ export default function App(props) {
     <Router>
       <>
         <Navbar active={document.title} mode={mode} theme={theme} />
-
         <LoadingBar
           color='#f11946'
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
-
-      
           <div className="container-fluid d-flex justify-content-center align-items-center ">
             <Routes>
               <Route

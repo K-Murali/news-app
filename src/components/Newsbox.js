@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Box.css";
 import { useState } from "react";
 // import { Bookmark } from "react-bookmark";
-
 export default function Newsbox(props) {
 const [flag, setflag] = useState(true);
  
@@ -20,8 +19,6 @@ const [flag, setflag] = useState(true);
   }
   return (
    <> 
-     
-   
         <div className=  {`container border border-2  shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
       
          {/* css u have to adjust here if u want to look good in all mobiles  */}

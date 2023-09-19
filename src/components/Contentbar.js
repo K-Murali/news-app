@@ -5,6 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "./Spinner";
 import Newsbox from "./Newsbox";
 
+
 const Contentbar = (props) => {
   const [count, setcount] = useState(null);
   const [page, setpage] = useState(1);
@@ -25,15 +26,8 @@ const Contentbar = (props) => {
      newsupdate(city,true)
     }
   };
-  
-  
-  const k=process.env.REACT_APP_API_KEY;
-  let apikey="9e5c4d00ff5e4bc994bc5d3f23256c84"
-  // 09bb51dd7f3d4a848db443c4982d14fa
-  
-
-
- 
+  const apikey=process.env.REACT_APP_API_KEY;
+  // let apikey="9e5c4d00ff5e4bc994bc5d3f23256c84"
  
   const newsupdate = async (topic = props.topic,flag=false) => {
     props.setprogress(20);
@@ -44,10 +38,8 @@ const Contentbar = (props) => {
     props.setprogress(62);
     let p = await fetch(url);
     props.setprogress(82);
-
     let data = await p.json();
     setarray(data.articles);
-    console.log(data.articles)
     settopic(topic);
     document.title=topic;
     setcount(data.totalResults);
@@ -56,23 +48,21 @@ const Contentbar = (props) => {
   };
 
   
-
   useEffect(() => {
-    
     props.setprogress(7);
     newsupdate();
+    console.log("rendered")
   }, []);
 
+  
   const fetchMoreData = async () => {
     let pr = new Promise((resolve, reject) => {
       setpage(page + 1); 
       resolve(4);
     });
-  
     pr.then(async () => {
 
       let url = `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${apikey}&page=${page}&pagesize=20`;
-
       let p = await fetch(url);
       let data = await p.json();
       console.log(data.articles)
@@ -80,11 +70,12 @@ const Contentbar = (props) => {
     });
   };
 
-
- 
   return (
     <div className="container my-5">
       {/* heading */}
+   <div  className="mt-5">
+
+   </div>
 
       <InfiniteScroll
         style={{ width: "100%" }}
