@@ -19,7 +19,7 @@ const [flag, setflag] = useState(true);
   }
   return (
    <> 
-        <div className=  {`container border border-2  shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
+        <div className=  {`container  border-2  shadow-lg p-2 mb-5 bg--${props.mode==="light"?"dark":"light"}  rounded d-flex justify-content-around`} style={{width:"fit-content"}} >
       
          {/* css u have to adjust here if u want to look good in all mobiles  */}
 
