@@ -27,9 +27,8 @@ export default function Navbar_1(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Home" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Home" ? "text-success" : "active"
+                    }`}
                   aria-current="page"
                   to="/"
                 >
@@ -38,9 +37,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Business" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Business" ? "text-success" : "active"
+                    }`}
                   aria-current="page"
                   to="/business"
                 >
@@ -49,9 +47,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Entertainment" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Entertainment" ? "text-success" : "active"
+                    }`}
                   to="/entertainment"
                 >
                   entertainment
@@ -59,9 +56,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Health" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Health" ? "text-success" : "active"
+                    }`}
                   to="/health"
                 >
                   health
@@ -69,9 +65,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Science" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Science" ? "text-success" : "active"
+                    }`}
                   to="/science"
                 >
                   science
@@ -79,9 +74,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "General" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "General" ? "text-success" : "active"
+                    }`}
                   to="/general"
                 >
                   general
@@ -89,9 +83,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Sports" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Sports" ? "text-success" : "active"
+                    }`}
                   to="/sports"
                 >
                   sports
@@ -99,9 +92,8 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
-                    props.active === "Technology" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link ${props.active === "Technology" ? "text-success" : "active"
+                    }`}
                   to="technology"
                 >
                   technology
@@ -109,40 +101,39 @@ export default function Navbar_1(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link  ${
-                    props.active === "About" ? "text-success" : "active"
-                  }`}
+                  className={`nav-link  ${props.active === "About" ? "text-success" : "active"
+                    }`}
                   to="/about"
                 >
                   About Us
                 </Link>
               </li>
-              
+
               <li className="nav-item">
 
-              <div className="dropdown " data-bs-theme={`${props.mode === "light" ? "light" : "dark"}`}>
-                <a
-                  className={`btn dropdown `}
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style={{color:`${props.mode === "light" ? "white" : "black"}`}}
-                >
-                   Bookmarks &nbsp;<i className="fa-regular fa-bookmark"></i></a>
-                <ul  id="book"className="dropdown-menu">
-                <li id="nothing"><a className="dropdown-item">Saved Items list</a></li>
-                <li><hr className="dropdown-divider"/></li>
-                </ul>
-              </div>
-                 
+                <div className="dropdown " data-bs-theme={`${props.mode === "light" ? "light" : "dark"}`}>
+                  <a
+                    className={`btn dropdown `}
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style={{ color: `${props.mode === "light" ? "white" : "black"}` }}
+                  >
+                    Bookmarks &nbsp;<i className="fa-regular fa-bookmark"></i></a>
+                  <ul id="book" className="dropdown-menu">
+                    <li id="nothing"><a className="dropdown-item">Saved Items list</a></li>
+                    <li><hr className="dropdown-divider" /></li>
+                  </ul>
+                </div>
+
               </li>
-              
+
             </ul>
 
-           
 
-            
+
+
 
             {/* dark mode changer */}
 
@@ -164,8 +155,8 @@ export default function Navbar_1(props) {
               >
                 {`${props.mode === "light" ? "dark" : "light"}`} Mode
               </label>
-              
-              
+
+
             </div>
           </div>
         </div>

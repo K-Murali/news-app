@@ -52,16 +52,22 @@ export default function App(props) {
                 path="/about"
                 element={<Aboutme title="About" mode={mode} key="about me" topic="about me" setprogress={updateProgress} />}
               />
+
+
               <Route
                 exact
                 path="/"
                 element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Home" title="Home" topic="general" />}
               />
+
+
               <Route
                 exact
                 path="/news-app"
                 element={<Contentbar bk={bookmark} setprogress={updateProgress} mode={mode} key="Navbar" title="Home" topic="general" />}
               />
+
+              
               <Route
                 exact
                 path="/business"
