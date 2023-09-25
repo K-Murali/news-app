@@ -102,6 +102,7 @@ const Contentbar = (props) => {
                   <button
                     type="button"
                     onClick={handelsearch}
+
                     className={`btn  btn-md me-2 btn-${
                       props.mode === "light" ? "dark" : "outline-light"
                     }`}
@@ -114,13 +115,14 @@ const Contentbar = (props) => {
 
         <div className="container d-flex flex-wrap justify-content-center align-items-center">
           {/* mapping elements  */}
+          
           {array.map((Element, i = 0) => {
             return (
               err(Element)&& Element.urlToImage && (
                   <Newsbox key={i++}
                     author={Element.author}
                     date={new Date(Element.publishedAt).getDate()}
-                    day={new Date(Element.publishedAt).getDay()}
+                    day={new Date(Element.publishedAt).getMonth()+1}
                     year={new Date(Element.publishedAt).getFullYear()}
                     mode={props.mode}
                     source={Element.source.name}
