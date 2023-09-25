@@ -80,9 +80,9 @@ const Contentbar = (props) => {
       <InfiniteScroll
         style={{ width: "100%" }}
         dataLength={array.length}
-        next={fetchMoreData}
-        hasMore={array.length % 20 != 0 ? false : true}
         loader={<Spinner />}
+        hasMore={array.length % 20 != 0 ? false : true}
+        next={fetchMoreData}
       >
         
             <h2
