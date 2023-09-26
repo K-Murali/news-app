@@ -67,7 +67,10 @@ const Contentbar = (props) => {
       let data = await p.json();
       console.log(data.articles)
       setarray(array.concat(data.articles));
-    });
+    }).catch((e)=>{
+      console.error("page exceded"+e);
+    })
+    ;
   };
 
   return (
